@@ -1,12 +1,25 @@
 // Responsável por rotas 
 
 import { FastifyInstance,FastifyPluginOptions,FastifyRequest,FastifyReply } from "fastify";
-import { request } from "http";
-
+import {CreateCustomerController} from './controllers/CreateCustomerController'
+import {ListCustomersController} from './controllers/ListCustomersController'
+import {DeleteCustomerController} from './controllers/DeleteCustomerController'
 
 export async function routes(fastify : FastifyInstance, options: FastifyPluginOptions){
 
-    fastify.get("/teste",async(request: FastifyRequest, reply: FastifyReply) => {  // criando rota
+    fastify.get("/teste",async(request: FastifyRequest, reply: FastifyReply) => {  // criando rota teste
+        return {ok : true}
+    })
 
+    fastify.post("/customer",async(request:FastifyRequest, reply: FastifyReply) => { // rota post
+        return new CreateCustomerController().handle(request,reply)  // Chama o meu Controller
+    })
+
+    fastify.get("/customers",async(request:FastifyRequest, reply: FastifyReply) => {
+        return new ListCustomersController().handle(request,reply)  // rota get
+    })
+
+    fastify.delete("/customer",async(request:FastifyRequest, reply: FastifyReply) => {
+        return new DeleteCustomerController().handle(request,reply)  // rota para deletar
     })
 }
