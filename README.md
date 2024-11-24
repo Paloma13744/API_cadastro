@@ -65,7 +65,7 @@ model Customer {
   createdAt DateTime @default(now())
 }
 
-   
+
 5. **Configuração da URL do Banco de Dados: Adicione a URL de conexão do MongoDB no arquivo .env:**
    ```bash
    DATABASE_URL="mongodb+srv://<username>:<password>@cluster0.mongodb.net/mydb?retryWrites=true&w=majority"
