@@ -43,27 +43,27 @@ Além disso, o **Prisma** deve ser configurado para conectar ao MongoDB.
    ```bash
    npx prisma init
    ```
-
-Isso criará um arquivo prisma/schema.prisma onde você pode configurar a conexão com o seu banco de dados MongoDB. 
-O arquivo schema.prisma deve ser configurado com a string de conexão para o MongoDB. 
-Aqui está um exemplo de como deve ficar a configuração de dados no arquivo schema.prisma:
-
-datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
-}
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-model Customer {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  name      String
-  email     String @unique
-  status    Boolean
-  createdAt DateTime @default(now())
-}
+   
+   Isso criará um arquivo prisma/schema.prisma onde você pode configurar a conexão com o seu banco de dados MongoDB. 
+   O arquivo schema.prisma deve ser configurado com a string de conexão para o MongoDB. 
+   Aqui está um exemplo de como deve ficar a configuração de dados no arquivo schema.prisma:
+   
+   datasource db {
+     provider = "mongodb"
+     url      = env("DATABASE_URL")
+   }
+   
+   generator client {
+     provider = "prisma-client-js"
+   }
+   
+   model Customer {
+     id        String @id @default(auto()) @map("_id") @db.ObjectId
+     name      String
+     email     String @unique
+     status    Boolean
+     createdAt DateTime @default(now())
+   }
 
 
 5. **Configuração da URL do Banco de Dados: Adicione a URL de conexão do MongoDB no arquivo .env:**
