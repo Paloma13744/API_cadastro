@@ -71,15 +71,15 @@ Além disso, o **Prisma** deve ser configurado para conectar ao MongoDB.
    DATABASE_URL="mongodb+srv://<username>:<password>@cluster0.mongodb.net/mydb?retryWrites=true&w=majority"
    ```
 
-6.**Gerando o Prisma Client: Após configurar o schema.prisma, execute o comando abaixo para gerar o cliente do Prisma:**
-```bash
-   npx prisma init
-```
+   6.**Gerando o Prisma Client: Após configurar o schema.prisma, execute o comando abaixo para gerar o cliente do Prisma:**
+   ```bash
+      npx prisma init
+   ```
 
-7.**Inicie o servidor: Para rodar a aplicação em desenvolvimento,use:**
-```bash
-  npm start
-```
+   7.**Inicie o servidor: Para rodar a aplicação em desenvolvimento,use:**
+   ```bash
+     npm start
+   ```
 
 
    
